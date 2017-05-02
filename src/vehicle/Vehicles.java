@@ -73,7 +73,7 @@ public class Vehicles
 		});
 		for (int i=0; i < jsonList.size(); i++)
 		{
-			System.out.println((i+1) + ". " + jsonList.get(i).get("name") + "-" + jsonList.get(i).get("price"));
+			System.out.println((i+1) + ". " + jsonList.get(i).get("name") + " - " + jsonList.get(i).get("price"));
 		}
 	} // sort by price ascending order
 	
@@ -83,7 +83,7 @@ public class Vehicles
 		for (int i=0; i < array.size(); i++)
 		{
 			JSONObject vehicle = (JSONObject) array.get(i);
-			System.out.print((i+1) + ". " + vehicle.get("name") + "-" + vehicle.get("sipp") + "-");
+			System.out.print((i+1) + ". " + vehicle.get("name") + " - " + vehicle.get("sipp") + " - ");
 			String sipp = (String) vehicle.get("sipp");
 			getSIPPDetails(sipp);
 		}
@@ -114,33 +114,33 @@ public class Vehicles
 		
 		switch (sipp.charAt(1))
 		{
-			case 'B': System.out.print("2 Doors-");
+			case 'B': System.out.print("2 Doors - ");
 				break;
-			case 'C': System.out.print("4 Doors-");
+			case 'C': System.out.print("4 Doors - ");
 				break;
-			case 'D': System.out.print("5 Doors-");
+			case 'D': System.out.print("5 Doors - ");
 				break;
-			case 'W': System.out.print("Estate-");
+			case 'W': System.out.print("Estate - ");
 				break;
-			case 'T': System.out.print("Convertible-");
+			case 'T': System.out.print("Convertible - ");
 				break;
-			case 'F': System.out.print("SUV-");
+			case 'F': System.out.print("SUV - ");
 				break;
-			case 'P': System.out.print("Pick Up-");
+			case 'P': System.out.print("Pick Up - ");
 				break;
-			case 'V': System.out.print("Passenger Van-");
+			case 'V': System.out.print("Passenger Van - ");
 				break;
 		} // switch	
 		
 		if (sipp.charAt(2) == 'M')
-			System.out.print("Manual-");
+			System.out.print("Manual - ");
 		else
-			System.out.print("Automatic-");
+			System.out.print("Automatic - ");
 		
 		if (sipp.charAt(3) == 'N')
-			System.out.print("Petrol-No A/C\n");
+			System.out.print("Petrol - No A/C\n");
 		else
-			System.out.print("Petrol-A/C\n");
+			System.out.print("Petrol - A/C\n");
 	} // getSIPPDetails
 	
 	private static void bestSuppliers(JSONArray array)
@@ -193,8 +193,8 @@ public class Vehicles
 			char s = sipp.charAt(0);
 			if (s != lastUsed)
 			{
-				System.out.println(count + ". " + jsonList.get(i).get("name") + "-" + getCarType(sipp.charAt(0)) + "-"
-									+ jsonList.get(i).get("supplier") + "-" + jsonList.get(i).get("rating"));
+				System.out.println(count + ". " + jsonList.get(i).get("name") + " - " + getCarType(sipp.charAt(0)) + " - "
+									+ jsonList.get(i).get("supplier") + " - " + jsonList.get(i).get("rating"));
 				lastUsed = s;
 				count++;
 			} // if

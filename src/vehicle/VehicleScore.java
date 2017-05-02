@@ -37,6 +37,6 @@ public class VehicleScore
 	
 	public String toString()
 	{
-		return name + "-" + vScore + "-" + suppScore + "-" + total;
+		return name + " - " + vScore + " - " + suppScore + " - " + total;
 	}
 }
